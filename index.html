@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>我的在线书签导航</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <main id="insertDiv"></main>
+    <main>
+        <div class="warper" id="insertDiv"></div>
+    </main>
+    <footer></footer>
     <script>
         var keys = {
-            0:{1:'q',2:'w',3:'e',4:'r',5:'t',6:'y',7:'u',8:'i',9:'o',10:'p',length:10},
-            1: {1:'a',2:'s',3:'d',4:'f',5:'g',6:'h',7:'j',8:'k',9:'l',length:9},
-            2:{1:'z',2:'x',3:'c',4:'v',5:'b',6:'n',7:'m',length:7}
+            '0':{0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',length:10},
+            '1':{0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',length:9},
+            '2':{0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m',length:7},
+            'length':3
         }
         var hash = {
             'a':'alibaba.com',
@@ -22,8 +27,21 @@
             'x':'xiedaimala.com',
             'z':'zhihu.com'
         }
-        div1 = document.createElement('div')
-        insertDiv.appendChild(div1)
+        index = 0
+        while(index<keys['length']){
+            div1 = document.createElement('div')
+            insertDiv.appendChild(div1)
+            row = keys[index]
+            index2 = 0
+            while(index2<row['length']){
+                kbd1 = document.createElement('kbd')
+                kbd1.textContent=row[index2]
+                div1.appendChild(kbd1)
+                index2 = index2 + 1
+            }
+            index = index + 1
+        }
+
     </script>
 </body>
 </html>

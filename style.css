@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding:0;
+}
+#insertDiv>div>kbd{
+    border:1px solid red;
+    height: 2em;
+    width: 2em;
+    display: inline-block;
+    text-transform: uppercase;
+}
+#insertDiv>div:nth-child(2){
+    padding-left:1em;
+}
+#insertDiv>div:nth-child(3){
+    padding-left:2em;
+}
+#insertDiv{
+    display: inline-block;
+}
+main{
+    text-align: center;
+}
