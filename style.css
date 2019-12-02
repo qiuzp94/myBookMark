@@ -3,9 +3,9 @@
     padding:0;
 }
 #insertDiv>div>kbd{
-    border:1px solid red;
-    height: 4em;
-    width: 4em;
+    /* border:1px solid red; */
+    height: 40px;
+    width: 48px;
     display: inline-block;
     text-transform: uppercase;
     position:relative;
@@ -20,10 +20,10 @@
     display:inline-block;
 }
 #insertDiv>div:nth-child(2){
-    padding-left:2em;
+    margin-left:-12px;
 }
 #insertDiv>div:nth-child(3){
-    padding-left:4em;
+    margin-left:-30px;
 }
 #insertDiv{
     display: inline-block;

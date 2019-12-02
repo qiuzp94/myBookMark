@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>我的在线书签导航</title>
+    <title>我的书签导航</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        .keyCss{
+            display: inline-block;
+            vertical-align: center;
+            color: #C5C5C5;
+            font-family: "Helvetica";
+            border:1px solid #373737;
+            border-radius: 8px;
+            font-size: 20px;
+            box-shadow: 0 0 0 1px #1A1B1C,0 0 0 1px #1F2020, 0 3px 0 2px #080808;
+            background: linear-gradient(180deg, rgba(41,41,41,1) 0%, rgba(17,17,17,1) 100%);
+            margin:0 15px; 
+        }
+        .warper>.row{
+            margin:17px;
+        }
+        
+    </style>
 </head>
 <body>
     <main>
@@ -28,7 +46,7 @@
             'x':'xiedaimala.com',
             'z':'zhihu.com'
         }
-        var hashInlocalStorage = JSON.parse(localStorage.getItem('zzz' || ''))
+        var hashInlocalStorage = JSON.parse(localStorage.getItem('zzz' || 'null'))
         if(hashInlocalStorage){
             hash = hashInlocalStorage
         }
@@ -42,6 +60,8 @@
             while(index2<row['length']){               
                 kbd1 = document.createElement('kbd')
                 kbd1.textContent=row[index2]
+                div1.className= 'row'
+                kbd1.className='keyCss'
                 button1 = document.createElement('button')
                 button1.textContent="编辑"
                 button1.id = row[index2]
