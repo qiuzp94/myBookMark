@@ -23,6 +23,7 @@
             'a':'alibaba.com',
             'b':'bilibili.co',
             'j':'js.jirengu.com',
+            'q':'qq.com',
             'r':'ruanyifeng.com',
             'x':'xiedaimala.com',
             'z':'zhihu.com'
@@ -41,6 +42,11 @@
             }
             index = index + 1
         }
+       document.onkeypress = function(touchkbd){
+           key = touchkbd['key']
+           website = hash[key]
+           window.open('http://'+website,'_blank')
+       }
 
     </script>
 </body>
