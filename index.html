@@ -31,17 +31,30 @@
         index = 0
         while(index<keys['length']){
             div1 = document.createElement('div')
-            insertDiv.appendChild(div1)
+            insertDiv.appendChild(div1)           
             row = keys[index]
             index2 = 0
-            while(index2<row['length']){
+            while(index2<row['length']){               
                 kbd1 = document.createElement('kbd')
                 kbd1.textContent=row[index2]
+                button1 = document.createElement('button')
+                button1.textContent="编辑"
+                button1.id = row[index2]
+                button1.onclick = function(touchkbd){
+                    key = touchkbd['target']['id']
+                    userEdit = prompt('给我一个新的网址')
+                    hash[key]=userEdit
+                }
+                kbd1.appendChild(button1)
                 div1.appendChild(kbd1)
+                
+                            
                 index2 = index2 + 1
             }
             index = index + 1
         }
+
+
        document.onkeypress = function(touchkbd){
            key = touchkbd['key']
            website = hash[key]

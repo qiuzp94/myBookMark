@@ -4,16 +4,26 @@
 }
 #insertDiv>div>kbd{
     border:1px solid red;
-    height: 2em;
-    width: 2em;
+    height: 4em;
+    width: 4em;
     display: inline-block;
     text-transform: uppercase;
+    position:relative;
+}
+#insertDiv>div>kbd>button{
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    display:none;
+}
+#insertDiv>div>kbd:hover>button{
+    display:inline-block;
 }
 #insertDiv>div:nth-child(2){
-    padding-left:1em;
+    padding-left:2em;
 }
 #insertDiv>div:nth-child(3){
-    padding-left:2em;
+    padding-left:4em;
 }
 #insertDiv{
     display: inline-block;
