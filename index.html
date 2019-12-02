@@ -28,6 +28,11 @@
             'x':'xiedaimala.com',
             'z':'zhihu.com'
         }
+        var hashInlocalStorage = JSON.parse(localStorage.getItem('zzz' || ''))
+        if(hashInlocalStorage){
+            hash = hashInlocalStorage
+        }
+
         index = 0
         while(index<keys['length']){
             div1 = document.createElement('div')
@@ -44,6 +49,7 @@
                     key = touchkbd['target']['id']
                     userEdit = prompt('给我一个新的网址')
                     hash[key]=userEdit
+                    localStorage.setItem('zzz',JSON.stringify(hash))
                 }
                 kbd1.appendChild(button1)
                 div1.appendChild(kbd1)
