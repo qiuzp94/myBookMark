@@ -31,8 +31,6 @@ listenToUser(hash)
 
 
 
-
-
 //第二部分  init
 function init(){
     var keys = {
@@ -44,21 +42,21 @@ function init(){
     var hash ={
         a:'acfun.com',
         b:'bilibili.com',
-        c:'cctv.com',
+        'c':'cctv.com',
         d:'dilidili.com',
-        e:'ele.me',
-        f:'fishc.com',
-        g:'google.com',
-        h:'hao123.com',
-        i:'iqiyi.com',
-        j:'js.jirengu.com',
+        'e':'ele.me',
+        'f':'fishc.com',
+        'g':'google.com',
+        'h':'hao123.com',
+        'i':'iqiyi.com',
+        'j':'js.jirengu.com',
         k:'kpl.qq.com',
         l:'lol.qq.com',
         m:'meitu.com',
         n:'name.com',
         o:'oppo.com',
         p:'ping.com',
-        q:'qq.com',
+        'q':'qq.com',
         r:'ruanyifeng.com',
         s:'soso.com',
         t:'taobao.com',
@@ -69,9 +67,11 @@ function init(){
         y:'yy.com',
         z:'zhihu.com'
     }
+    
     var hashInlocalStorage = getFormLocalStorage('zzz')
     if(hashInlocalStorage){
         hash = hashInlocalStorage
+        
     }
    
     return{
@@ -80,6 +80,8 @@ function init(){
     }
                 
 }
+
+
 function getFormLocalStorage(name){
     return JSON.parse(localStorage.getItem(name)|| 'null')
 }
@@ -110,8 +112,9 @@ function generateKeyboard(keys,hash){
             kbd.className = 'key'
 
             kbd.appendChild(span)
-            kbd.appendChild(button)
             kbd.appendChild(img)
+            kbd.appendChild(button)
+            
 
             div.appendChild(kbd)
         }
@@ -156,15 +159,18 @@ function createButton(id){
     button.onclick = function(touchkbd){
         var button2 = touchkbd['target']
         var img2 = button2.previousSibling
+        
         var key = button2['id']
         var x = prompt('给我一个网址')
         hash[key] = x
-        img2.src= 'http://'+x+'/favicon.ico'
-      
+        img2.src = 'http://'+x + '/favicon.ico'
+        console.log(img2)
+        
         img2.onerror = function(xxx){
-        xxx.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
+            xxx.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
         }
-        localStorage.setItem('zzz',JSON.stringify(hash))
+        localStorage.setItem('zzz', JSON.stringify(hash))
+        
     }
     return button
 }
